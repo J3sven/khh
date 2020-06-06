@@ -4,16 +4,10 @@ var translator = require('papago-translator-j3').init({
 });
 
 function translateKorean(message) {
-    // var obj = {
-    //     text: message,
-    //     target: 'en',
-    //     source: 'ko'
-    // };
-
     return new Promise(resolve => {
         console.log('translating');
         resolve(
-            translator.translate(message, process.env.PAPAGO_CLIENT_ID, process.env.PAPAGO_CLIENT_SECRET, function(err, res) {
+            translator.translate(message, process.env.PAPAGO_CLIENT_ID, process.env.PAPAGO_CLIENT_SECRET, 'ko', 'en', function(err, res) {
                 console.log("result from bot:" + res.translatedText);
                 return res.translatedText
             })
