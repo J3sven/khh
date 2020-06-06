@@ -5,17 +5,22 @@ var translator = require('papago-translator-j3').init({
 
 function translateKorean(message) {
     return new Promise(resolve => {
-        console.log('translating');
         resolve(
             translator.translate(message, process.env.PAPAGO_CLIENT_ID, process.env.PAPAGO_CLIENT_SECRET, 'ko', 'en', function(err, res) {
-                console.log("result from bot:" + res.translatedText);
                 return res.translatedText
             })
         );
-    });
-
-    
-    
+    }); 
 }
 
-module.exports = { translateKorean };
+function translateEnglish(message) {
+    return new Promise(resolve => {
+        resolve(
+            translator.translate(message, process.env.PAPAGO_CLIENT_ID, process.env.PAPAGO_CLIENT_SECRET, 'en', 'ko', function(err, res) {
+                return res.translatedText
+            })
+        );
+    }); 
+}
+
+module.exports = { translateKorean, translateEnglish };

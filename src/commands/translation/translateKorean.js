@@ -10,6 +10,6 @@ module.exports = {
         }
         translationResults()
     },
-    aliases: ['t', 'tl', 'translator'],
+    aliases: ['t', 'tl', 'tkr', 'tlkr'],
     description: 'Translates Korean to English'
 }
