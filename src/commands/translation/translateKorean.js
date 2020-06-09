@@ -4,7 +4,7 @@ module.exports = {
     run: async(client, message, args) => {
 
         async function translationResults() {
-            console.log('starting translation');
+            message.channel.send("I am trying ok?");
             resultText = await translateKorean(args);
             message.channel.send(":flag_gb: " + resultText.text);
         }
