@@ -1,5 +1,4 @@
 node_modules/*
-!node_modules/papago-translator-j3
 .ssh
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
